@@ -22,14 +22,16 @@
     "test": "aw node --glob test/e2e.spec.js --no-babel"
   },
   "devDependencies": {
-    "@after-work.js/aw": "^6.0.8",
     "enigma.js": "^2.4.0",
     "eslint": "^5.4.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
+    "vitest": "^0.34.4",
     "ws": "^7.1.2"
   },
   "dependencies": {
-    "grpc": "^1.14.1"
+    "@grpc/grpc-js": "^1.9.2",
+    "@grpc/proto-loader": "^0.7.9",
+    "protobufjs": "^7.2.5"
   }
 }
