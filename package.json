@@ -1,9 +1,15 @@
 {
-  "name": "qlik-sse",
+  "name": "@informatiqal/qlik-sse",
   "version": "0.4.1",
   "description": "Qlik Sense Server Side Extension in nodejs",
   "license": "MIT",
-  "author": "miralemd",
+  "author": {
+    "name": "informatiqal",
+    "url": "https://informatiqal.com"
+  },
+  "contributors": [
+    "miralemd"
+  ],
   "keywords": [
     "qlik",
     "sse",

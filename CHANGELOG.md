@@ -1,19 +1,21 @@
+# Changelog
+
+## 0.4.1
+
+- migrated to `grpc-js`. The old `grpc` package is deprecated
+- test cases are migrated to `vitest`
+
 ## 0.3.0 (2019-10-13)
 
-#### Features
+### Features
 
 - support table load
 - handle async function
 - add `close()` method on server
-
-#### Bug fixes
-
-- catch outer function errors
-- catch script errors
+- FIX catch outer function errors
+- FIX catch script errors
 
 ## 0.2.0 (2018-12-04)
-
-#### Features
 
 - enable script evaluation
 
