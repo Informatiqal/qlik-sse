@@ -29,7 +29,8 @@ Start by installing `qlik-sse`:
 npm install qlik-sse
 ```
 
-Next, create a file `foo.js`: 
+Next, create a file `foo.js`:
+
 ```js
 const q = require('qlik-sse');
 
@@ -88,4 +89,5 @@ Take a look at some of the [examples](./examples) on how to add functionality to
     - [ ] expression calls
 - Features
   - [x] Script evaluation
+  - [ ] SSL communication
   - Error handling
