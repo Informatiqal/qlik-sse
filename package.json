@@ -21,7 +21,8 @@
   },
   "files": [
     "lib",
-    "assets"
+    "assets",
+    "CHANGELOG.md"
   ],
   "main": "lib/index.js",
   "scripts": {
