@@ -1,6 +1,11 @@
 # Changelog
 
-## 0.4.1
+## 0.5.0 (2023-09-09)
+
+- `ssl` option in the config. When provided (+ the required certificates) the server will be created with `createSsl` option. This will make the communication between the server and the client(s) secure
+- correctly return errors during communication - `request.call.sendError` instead of `request.call.cancelWithStatus`. `request.call.sendError` is the new way of sending errors
+
+## 0.4.1 (2023-09-08)
 
 - migrated to `grpc-js`. The old `grpc` package is deprecated
 - test cases are migrated to `vitest`
