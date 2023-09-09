@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "enigma.js": "^2.4.0",
-    "eslint": "^5.4.0",
+    "eslint": "^8.0.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
     "vitest": "^0.34.4",
