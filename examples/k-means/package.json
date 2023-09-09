@@ -5,10 +5,10 @@
     "start": "parcel ./web/index.html"
   },
   "dependencies": {
-    "@nebula.js/nucleus": "0.1.0-alpha.21",
-    "enigma.js": "2.4.0",
+    "@nebula.js/nucleus": "0.5.0",
+    "enigma.js": "2.12.0",
     "parcel-bundler": "1.12.4",
-    "picasso-plugin-q": "0.27.0",
-    "picasso.js": "0.27.0"
+    "picasso-plugin-q": "2.2.5",
+    "picasso.js": "2.2.5"
   }
 }
