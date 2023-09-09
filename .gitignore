@@ -6,3 +6,7 @@
 .cache/
 node_modules/
 dist/
+test.js
+certs/
+tsconfig.json
+.npmrc

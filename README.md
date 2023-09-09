@@ -1,5 +1,7 @@
 # qlik-sse
 
+**Continuing from where [Miralem](https://github.com/miralemd) left off. The original repository can be found [here](https://github.com/miralemd/qlik-sse)**
+
 `qlik-sse` is an npm package that simplifies the creation of Qlik Server Side Extensions in nodejs.
 
 Check out [Server Side Extension](https://github.com/qlik-oss/server-side-extension) for more info and how to get started from the Qlik side.
@@ -29,14 +31,15 @@ Start by installing `qlik-sse`:
 npm install qlik-sse
 ```
 
-Next, create a file `foo.js`: 
+Next, create a file `foo.js`:
+
 ```js
-const q = require('qlik-sse');
+const q = require("qlik-sse");
 
 // create an instance of the server
 const s = q.server({
-  identifier: 'xxx',
-  version: '0.1.0',
+  identifier: "xxx",
+  version: "0.1.0",
 });
 
 // register functions
@@ -45,7 +48,7 @@ s.addFunction(/* */);
 // start the server
 s.start({
   port: 50051,
-  allowScript: true
+  allowScript: true,
 });
 ```
 
@@ -75,6 +78,7 @@ Take a look at some of the [examples](./examples) on how to add functionality to
   - [x] API
   - [x] Explain function types `SCALAR`, `AGGREGATION` and `TENSOR`
   - [x] Table load
+  - [ ] Documentation review + dedicated help/documentation page
 - Examples
   - [ ] How to use tensorflow with qix data
   - Real use cases
@@ -88,4 +92,9 @@ Take a look at some of the [examples](./examples) on how to add functionality to
     - [ ] expression calls
 - Features
   - [x] Script evaluation
+  - [ ] SSL communication (certificate usage)
   - Error handling
+- Code
+  - [ ] Convert to ES6
+  - [ ] Convert to TypeScript?
+  - [ ] Build step?

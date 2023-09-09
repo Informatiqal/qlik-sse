@@ -1,9 +1,15 @@
 {
-  "name": "qlik-sse",
-  "version": "0.3.0",
+  "name": "@informatiqal/qlik-sse",
+  "version": "0.5.0",
   "description": "Qlik Sense Server Side Extension in nodejs",
   "license": "MIT",
-  "author": "miralemd",
+  "author": {
+    "name": "informatiqal",
+    "url": "https://informatiqal.com"
+  },
+  "contributors": [
+    "miralemd"
+  ],
   "keywords": [
     "qlik",
     "sse",
@@ -11,25 +17,28 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/miralemd/qlik-sse.git"
+    "url": "https://github.com/informatiqal/qlik-sse.git"
   },
   "files": [
     "lib",
-    "assets"
+    "assets",
+    "CHANGELOG.md"
   ],
   "main": "lib/index.js",
   "scripts": {
-    "test": "aw node --glob test/e2e.spec.js --no-babel"
+    "test": "vitest test/e2e.spec.js"
   },
   "devDependencies": {
-    "@after-work.js/aw": "^6.0.8",
     "enigma.js": "^2.4.0",
     "eslint": "^5.4.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
+    "vitest": "^0.34.4",
     "ws": "^7.1.2"
   },
   "dependencies": {
-    "grpc": "^1.14.1"
+    "@grpc/grpc-js": "^1.9.2",
+    "@grpc/proto-loader": "^0.7.9",
+    "protobufjs": "^7.2.5"
   }
 }
