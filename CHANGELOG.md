@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.6.0 (2023-09-10)
+
+- codebase converted to ESM
+
 ## 0.5.1 (2023-09-10)
 
 - output the peer ip address
