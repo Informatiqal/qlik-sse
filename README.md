@@ -36,7 +36,8 @@ npm install qlik-sse
 Next, create a file `foo.js`:
 
 ```js
-const q = require("qlik-sse");
+import * as q from "@informatiqal/qlik-sse";
+//or import { server, sse, sseServices } from "@informatiqal/qlik-sse";
 
 // create an instance of the server
 const s = q.server({
@@ -97,6 +98,6 @@ Take a look at some of the [examples](./examples) on how to add functionality to
   - [x] SSL communication (certificate usage)
   - [ ] Error handling
 - Code
-  - [ ] Convert to ES6
-  - [ ] Convert to TypeScript?
+  - [x] Convert to ES6
+  - [ ] ~~Convert to TypeScript?~~ Just used JSDoc. No need to complicate things
   - [ ] Build step?
