@@ -100,4 +100,4 @@ Take a look at some of the [examples](./examples) on how to add functionality to
 - Code
   - [x] Convert to ES6
   - [ ] ~~Convert to TypeScript?~~ Just used JSDoc. No need to complicate things
-  - [ ] Build step?
+  - [x] Build step?
