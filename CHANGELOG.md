@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.6.1 (2023-09-10)
+
+- build step to create both ESM and CommonJS versions of the package
+
 ## 0.6.0 (2023-09-10)
 
 - codebase converted to ESM
