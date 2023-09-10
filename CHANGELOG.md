@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.6.2 (2023-09-10)
+
+- `sseServices` no longer exported. `sseServices` data is now part of `sse` variable (as it should be)
+- updated readme with info about breaking change when creating instance of a message - instead of `.buffer` we have to call `finish()` method
+- tests updated with the above change
+
 ## 0.6.1 (2023-09-10)
 
 - no need to use `.values` for `sse.DataType` and `sse.FunctionType`. This makes the package backward compatible with the old version. Tested with [RobWunderlich/qcb-qlik-sse](https://github.com/RobWunderlich/qcb-qlik-sse)
