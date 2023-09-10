@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.5.1 (2023-09-10)
+
+- output the peer ip address
+- included the ssl tools required to generate certificates. Copied the instructions from [qlik-oss/server-side-extension](https://github.com/qlik-oss/server-side-extension/tree/master/generate_certs_guide)
+
 ## 0.5.0 (2023-09-09)
 
 - `ssl` option in the config. When provided (+ the required certificates) the server will be created with `createSsl` option. This will make the communication between the server and the client(s) secure

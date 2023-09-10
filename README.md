@@ -2,6 +2,8 @@
 
 ## Continuing from where [Miralem](https://github.com/miralemd) left off. The original repository can be found [here](https://github.com/miralemd/qlik-sse)
 
+## [User documentation here](https://docs.informatiqal.com/qlik-sse/)
+
 `qlik-sse` is an npm package that simplifies the creation of Qlik Server Side Extensions in nodejs.
 
 Check out [Server Side Extension](https://github.com/qlik-oss/server-side-extension) for more info and how to get started from the Qlik side.

@@ -10,3 +10,5 @@ test.js
 certs/
 tsconfig.json
 .npmrc
+*.pem
+*.csr
