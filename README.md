@@ -4,7 +4,7 @@
 
 ## [User documentation here](https://docs.informatiqal.com/qlik-sse/)
 
-`qlik-sse` is an npm package that simplifies the creation of Qlik Server Side Extensions in nodejs.
+`@informatiqal/qlik-sse` is an npm package that simplifies the creation of Qlik Server Side Extensions in nodejs.
 
 Check out [Server Side Extension](https://github.com/qlik-oss/server-side-extension) for more info and how to get started from the Qlik side.
 
@@ -27,10 +27,10 @@ Before continuing, make sure you:
 
 ### Usage
 
-Start by installing `qlik-sse`:
+Start by installing `@informatiqal/qlik-sse`:
 
 ```sh
-npm install qlik-sse
+npm install @informatiqal/qlik-sse
 ```
 
 Next, create a file `foo.js`:
@@ -100,4 +100,4 @@ Take a look at some of the [examples](./examples) on how to add functionality to
 - Code
   - [x] Convert to ES6
   - [ ] ~~Convert to TypeScript?~~ Just used JSDoc. No need to complicate things
-  - [x] Build step?
+  - [x] Build step

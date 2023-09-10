@@ -2,11 +2,12 @@
 
 ## 0.6.1 (2023-09-10)
 
-- build step to create both ESM and CommonJS versions of the package
+- no need to use `.values` for `sse.DataType` and `sse.FunctionType`. This makes the package backward compatible with the old version. Tested with [RobWunderlich/qcb-qlik-sse](https://github.com/RobWunderlich/qcb-qlik-sse)
 
 ## 0.6.0 (2023-09-10)
 
 - codebase converted to ESM
+- build step to create both ESM and CommonJS versions of the package
 
 ## 0.5.1 (2023-09-10)
 
