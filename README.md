@@ -1,6 +1,6 @@
 # qlik-sse
 
-**Continuing from where [Miralem](https://github.com/miralemd) left off. The original repository can be found [here](https://github.com/miralemd/qlik-sse)**
+## Continuing from where [Miralem](https://github.com/miralemd) left off. The original repository can be found [here](https://github.com/miralemd/qlik-sse)
 
 `qlik-sse` is an npm package that simplifies the creation of Qlik Server Side Extensions in nodejs.
 
@@ -92,8 +92,8 @@ Take a look at some of the [examples](./examples) on how to add functionality to
     - [ ] expression calls
 - Features
   - [x] Script evaluation
-  - [ ] SSL communication (certificate usage)
-  - Error handling
+  - [x] SSL communication (certificate usage)
+  - [ ] Error handling
 - Code
   - [ ] Convert to ES6
   - [ ] Convert to TypeScript?
