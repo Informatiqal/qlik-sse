@@ -141,15 +141,12 @@ describe("e2e", () => {
 
   describe("executeFunction", () => {
     it("should emit UNIMPLEMENTED error when function is not found", (done) => {
-      const fmh = sse.FunctionRequestHeader.create({
+      const fmh = sse.FunctionRequestHeader.encode({
         functionId: 99,
-      });
+      }).finish();
 
       const metadata = new grpc.Metadata();
-      metadata.set(
-        "qlik-functionrequestheader-bin",
-        Buffer.from(JSON.stringify(fmh.toJSON()))
-      );
+      metadata.set("qlik-functionrequestheader-bin", fmh);
 
       const e = c.executeFunction(metadata);
 
@@ -163,15 +160,12 @@ describe("e2e", () => {
     });
 
     it("should emit UNKNOWN error when function throws error", (done) => {
-      const fmh = sse.FunctionRequestHeader.create({
+      const fmh = sse.FunctionRequestHeader.encode({
         functionId: 1003,
-      });
+      }).finish();
 
       const metadata = new grpc.Metadata();
-      metadata.set(
-        "qlik-functionrequestheader-bin",
-        Buffer.from(JSON.stringify(fmh.toJSON()))
-      );
+      metadata.set("qlik-functionrequestheader-bin", fmh);
 
       const e = c.executeFunction(metadata);
 
@@ -185,17 +179,14 @@ describe("e2e", () => {
     });
 
     it("should duplicate numbers", (done) => {
-      const fmh = sse.FunctionRequestHeader.create({
+      const fmh = sse.FunctionRequestHeader.encode({
         functionId: 1001,
-      });
+      }).finish();
 
       const metadata = new grpc.Metadata();
-      metadata.set(
-        "qlik-functionrequestheader-bin",
-        Buffer.from(JSON.stringify(fmh.toJSON()))
-      );
+      metadata.set("qlik-functionrequestheader-bin", fmh);
 
-      const b = sse.BundledRows.create({
+      const b = sse.BundledRows.encode({
         rows: [
           {
             duals: [
@@ -205,7 +196,7 @@ describe("e2e", () => {
             ],
           },
         ],
-      });
+      }).finish();
 
       const e = c.executeFunction(metadata);
 
@@ -226,15 +217,12 @@ describe("e2e", () => {
     });
 
     it("should support async function", (done) => {
-      const fmh = sse.FunctionRequestHeader.create({
+      const fmh = sse.FunctionRequestHeader.encode({
         functionId: 1002,
-      });
+      }).finish();
 
       const metadata = new grpc.Metadata();
-      metadata.set(
-        "qlik-functionrequestheader-bin",
-        Buffer.from(JSON.stringify(fmh.toJSON()))
-      );
+      metadata.set("qlik-functionrequestheader-bin", fmh);
 
       const b = sse.BundledRows.create({
         rows: [
@@ -271,30 +259,24 @@ describe("e2e", () => {
 
   describe("evaluateScript", () => {
     it("should duplicate numbers", (done) => {
-      const sh = sse.ScriptRequestHeader.create({
+      const sh = sse.ScriptRequestHeader.encode({
         script: "return args[0] * 2",
         functionType: sse.FunctionType.SCALAR,
         returnType: sse.DataType.NUMERIC,
         params: [{ dataType: sse.DataType.NUMERIC, name: "f" }],
-      });
+      }).finish();
 
-      const ch = sse.CommonRequestHeader.create({
+      const ch = sse.CommonRequestHeader.encode({
         appId: "aa",
         userId: "uu",
         cardinality: 55,
-      });
+      }).finish();
 
       const metadata = new grpc.Metadata();
-      metadata.set(
-        "qlik-scriptrequestheader-bin",
-        Buffer.from(JSON.stringify(sh.toJSON()))
-      );
-      metadata.set(
-        "qlik-commonrequestheader-bin",
-        Buffer.from(JSON.stringify(ch.toJSON()))
-      );
+      metadata.set("qlik-scriptrequestheader-bin", sh);
+      metadata.set("qlik-commonrequestheader-bin", ch);
 
-      const b = sse.BundledRows.create({
+      const b = sse.BundledRows.encode({
         rows: [
           {
             duals: [
@@ -304,7 +286,7 @@ describe("e2e", () => {
             ],
           },
         ],
-      });
+      }).finish();
 
       const e = c.evaluateScript(metadata);
 
@@ -325,30 +307,24 @@ describe("e2e", () => {
     });
 
     it("should duplicate numbers aggr", (done) => {
-      const sh = sse.ScriptRequestHeader.create({
+      const sh = sse.ScriptRequestHeader.encode({
         script: "return args[0] * 2",
         functionType: sse.FunctionType.AGGREGATION,
         returnType: sse.DataType.NUMERIC,
         params: [{ dataType: sse.DataType.NUMERIC, name: "f" }],
-      });
+      }).finish();
 
-      const ch = sse.CommonRequestHeader.create({
+      const ch = sse.CommonRequestHeader.encode({
         appId: "aa",
         userId: "uu",
         cardinality: 55,
-      });
+      }).finish();
 
       const metadata = new grpc.Metadata();
-      metadata.set(
-        "qlik-scriptrequestheader-bin",
-        Buffer.from(JSON.stringify(sh.toJSON()))
-      );
-      metadata.set(
-        "qlik-commonrequestheader-bin",
-        Buffer.from(JSON.stringify(ch.toJSON()))
-      );
+      metadata.set("qlik-scriptrequestheader-bin", sh);
+      metadata.set("qlik-commonrequestheader-bin", ch);
 
-      const b = sse.BundledRows.create({
+      const b = sse.BundledRows.encode({
         rows: [
           {
             duals: [
@@ -358,7 +334,7 @@ describe("e2e", () => {
             ],
           },
         ],
-      });
+      }).finish();
 
       const e = c.evaluateScript(metadata);
 
@@ -379,28 +355,22 @@ describe("e2e", () => {
     });
 
     it("should catch script parsing error", (done) => {
-      const sh = sse.ScriptRequestHeader.create({
+      const sh = sse.ScriptRequestHeader.encode({
         script: "blah invalid javascript",
         functionType: sse.FunctionType.SCALAR,
         returnType: sse.DataType.NUMERIC,
         params: [{ dataType: sse.DataType.NUMERIC, name: "f" }],
-      });
+      }).finish();
 
-      const ch = sse.CommonRequestHeader.create({
+      const ch = sse.CommonRequestHeader.encode({
         appId: "aa",
         userId: "uu",
         cardinality: 55,
-      });
+      }).finish();
 
       const metadata = new grpc.Metadata();
-      metadata.set(
-        "qlik-scriptrequestheader-bin",
-        Buffer.from(JSON.stringify(sh.toJSON()))
-      );
-      metadata.set(
-        "qlik-commonrequestheader-bin",
-        Buffer.from(JSON.stringify(ch.toJSON()))
-      );
+      metadata.set("qlik-scriptrequestheader-bin", sh);
+      metadata.set("qlik-commonrequestheader-bin", ch);
 
       const e = c.evaluateScript(metadata);
 
@@ -419,28 +389,22 @@ describe("e2e", () => {
     });
 
     it("should not allow scriptEvalExStr", (done) => {
-      const sh = sse.ScriptRequestHeader.create({
+      const sh = sse.ScriptRequestHeader.encode({
         script: "return 0",
         functionType: sse.FunctionType.SCALAR,
         returnType: sse.DataType.STRING,
         params: [{ dataType: sse.DataType.DUAL, name: "f" }],
-      });
+      }).finish();
 
-      const ch = sse.CommonRequestHeader.create({
+      const ch = sse.CommonRequestHeader.encode({
         appId: "aa",
         userId: "uu",
         cardinality: 55,
-      });
+      }).finish();
 
       const metadata = new grpc.Metadata();
-      metadata.set(
-        "qlik-scriptrequestheader-bin",
-        Buffer.from(JSON.stringify(sh.toJSON()))
-      );
-      metadata.set(
-        "qlik-commonrequestheader-bin",
-        Buffer.from(JSON.stringify(ch.toJSON()))
-      );
+      metadata.set("qlik-scriptrequestheader-bin", sh);
+      metadata.set("qlik-commonrequestheader-bin", ch);
 
       const e = c.evaluateScript(metadata);
 
@@ -459,18 +423,18 @@ describe("e2e", () => {
     });
 
     it("should catch script execution error", (done) => {
-      const sh = sse.ScriptRequestHeader.create({
+      const sh = sse.ScriptRequestHeader.encode({
         script: "return args.foo.nope",
         functionType: sse.FunctionType.SCALAR,
         returnType: sse.DataType.NUMERIC,
         params: [{ dataType: sse.DataType.NUMERIC, name: "f" }],
-      });
+      }).finish();
 
-      const ch = sse.CommonRequestHeader.create({
+      const ch = sse.CommonRequestHeader.encode({
         appId: "aa",
         userId: "uu",
         cardinality: 55,
-      });
+      }).finish();
 
       const metadata = new grpc.Metadata();
       metadata.set(
@@ -482,7 +446,7 @@ describe("e2e", () => {
         Buffer.from(JSON.stringify(ch.toJSON()))
       );
 
-      const b = sse.BundledRows.create({
+      const b = sse.BundledRows.encode({
         rows: [
           {
             duals: [
@@ -492,7 +456,7 @@ describe("e2e", () => {
             ],
           },
         ],
-      });
+      }).finish();
 
       const e = c.evaluateScript(metadata);
 

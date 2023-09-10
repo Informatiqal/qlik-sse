@@ -2,11 +2,36 @@
 
 ## Continuing from where [Miralem](https://github.com/miralemd) left off. The original repository can be found [here](https://github.com/miralemd/qlik-sse)
 
-## [User documentation here](https://docs.informatiqal.com/qlik-sse/)
+## [New User documentation here](https://docs.informatiqal.com/qlik-sse/)
 
 `@informatiqal/qlik-sse` is an npm package that simplifies the creation of Qlik Server Side Extensions in nodejs.
 
 Check out [Server Side Extension](https://github.com/qlik-oss/server-side-extension) for more info and how to get started from the Qlik side.
+
+## Breaking change
+
+After migrating to `grpc-js` and `protobuf.js` there is a small (but breaking) change when creating instance of a message.
+Instead of `.buffer` property we now have to call `.finish()` method.
+
+```javascript
+//Old syntax
+const tableDescription = q.sse.TableDescription.encode({
+  fields: [
+    { name: "Dim", dataType: q.sse.DataType.STRING },
+    { name: "Value", dataType: q.sse.DataType.NUMERIC },
+  ],
+}).buffer;
+```
+
+```javascript
+//New syntax
+const tableDescription = q.sse.TableDescription.encode({
+  fields: [
+    { name: "Dim", dataType: q.sse.DataType.STRING },
+    { name: "Value", dataType: q.sse.DataType.NUMERIC },
+  ],
+}).finish();
+```
 
 ---
 
@@ -23,7 +48,7 @@ Check out [Server Side Extension](https://github.com/qlik-oss/server-side-extens
 Before continuing, make sure you:
 
 - have Node.js >= v8.0.0 installed
-- can configure your Qlik installation (or dockerized Qlik Engine)
+- can configure your Qlik installation
 
 ### Usage
 
