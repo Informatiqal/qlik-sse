@@ -1,7 +1,7 @@
 import { it, describe, expect, beforeEach, afterEach } from "vitest";
 
 import grpc from "@grpc/grpc-js";
-import { server, sse, seeServices } from "../lib/index";
+import { server, sse, sseServices } from "../lib/index";
 
 function duplicate(request) {
   request.on("data", (bundle) => {
@@ -91,7 +91,7 @@ describe("e2e", () => {
       port: 5001,
     });
 
-    c = new seeServices.Connector(
+    c = new sseServices.Connector(
       "0.0.0.0:5001",
       grpc.credentials.createInsecure()
     );
