@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.6.3 (2023-09-11)
+
+- re-publish the package with type declarations
+
 ## 0.6.2 (2023-09-10)
 
 - `sseServices` no longer exported. `sseServices` data is now part of `sse` variable (as it should be)
