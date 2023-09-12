@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.6.4 (2023-09-12)
+
+- type declarations should be available now [Informatiqal/qlik-sse#9](https://github.com/Informatiqal/qlik-sse/issues/9)
+- added more type definitions
+
 ## 0.6.3 (2023-09-11)
 
 - re-publish the package with type declarations

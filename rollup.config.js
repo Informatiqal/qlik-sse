@@ -8,7 +8,7 @@ export default {
   input: "lib/index.js",
   output: [
     {
-      file: "dist/index.mjs",
+      file: "dist/index.js",
       format: "esm",
       sourcemap: true,
     },

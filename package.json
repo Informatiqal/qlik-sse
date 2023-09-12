@@ -1,15 +1,18 @@
 {
   "name": "@informatiqal/qlik-sse",
-  "version": "0.6.3",
+  "version": "0.6.4",
   "description": "Qlik Sense Server Side Extension in nodejs",
   "license": "MIT",
   "author": {
     "name": "informatiqal",
     "url": "https://informatiqal.com"
   },
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index",
   "type": "module",
   "exports": {
-    "import": "./dist/index.mjs",
+    "import": "./dist/index.js",
     "require": "./dist/index.cjs"
   },
   "scripts": {
