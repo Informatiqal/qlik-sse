@@ -100,6 +100,27 @@ You have now successfully created a Server Side Extension that can be used from 
 
 Take a look at some of the [examples](./examples) on how to add functionality to the SSE.
 
+## Events
+
+The package expose event emitter that emits couple of events - `info` and `error`
+
+```javascript
+import { server, emitter } from "@informatiqal/qlik-sse";
+
+const s = server({
+  identifier: "MySSE",
+  version: "0.1.0",
+});
+
+emitter.on("info", (message) => {
+  // do something with the info message
+});
+
+emitter.on("error", (message) => {
+  // do something in case of error
+});
+```
+
 ## TODO
 
 - Documentation

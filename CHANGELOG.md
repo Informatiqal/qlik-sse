@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.6.5 (2023-09-12)
+
+- No more `console.log`. All messages are send via event emitter [Informatiqal/qlik-sse#8](https://github.com/Informatiqal/qlik-sse/issues/8)
+
 ## 0.6.4 (2023-09-12)
 
 - type declarations should be available now [Informatiqal/qlik-sse#9](https://github.com/Informatiqal/qlik-sse/issues/9)
