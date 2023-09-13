@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.6.6 (2023-09-13)
+
+- The capability response emits each initial info as separate requests, instead of one big message
+
 ## 0.6.5 (2023-09-12)
 
 - No more `console.log`. All messages are send via event emitter [Informatiqal/qlik-sse#8](https://github.com/Informatiqal/qlik-sse/issues/8)
