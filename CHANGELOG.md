@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.7.1 (2023-09-15)
+
+- can provide description when registering a function. The field is optional
+- build-in function `ListAllFunctions`. This function will be registered on server start
+- server config option to disable loading of ALL build-in functions. Default is `false` (all build-in functions will be loaded on server start)
+
 ## 0.7.0 (2023-09-15)
 
 - [Informatiqal/qlik-sse#10](https://github.com/Informatiqal/qlik-sse/issues/10) added few extra server methods for managing services:
