@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.7.0 (2023-09-15)
+
+- [Informatiqal/qlik-sse#10](https://github.com/Informatiqal/qlik-sse/issues/10) added few extra server methods for managing services:
+
+  - `listAllFunctions` - list all possible functions (enabled and disabled)
+  - `removeFunction` - remove function completely. Once removed is no longer part of the server and `listAllFunctions` method will not return it as well
+  - `disableFunction` - disable function. The disabled function exists but will return an error on attempt to be executed/invoked
+  - `enableFunction` - enable function. By default all functions are enabled
+
+- FIX small issue with emitter for capabilities method
+
 ## 0.6.6 (2023-09-13)
 
 - The capability response emits each initial info as separate requests, instead of one big message
