@@ -47,7 +47,7 @@
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^15.2.1",
     "enigma.js": "^2.12.0",
-    "rollup": "^3.29.1",
+    "rollup": "^4.0.0",
     "rollup-plugin-delete": "^2.0.0",
     "typescript": "^5.2.2",
     "vitest": "^0.34.4",
